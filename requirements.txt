@@ -5,6 +5,6 @@ pandas==1.4.3
 scikit_learn==1.1.1
 sklearn_features==0.0.2
 xgboost==1.6.1
-yaml==0.2.5
+yaml
 gunicorn
 
