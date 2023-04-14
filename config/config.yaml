@@ -1,0 +1,80 @@
+#Path needed
+raw_dataset_dir: data/raw/
+train_set_path:
+  - data/processed/x_train.pkl
+  - data/processed/y_train.pkl
+valid_set_path:
+  - data/processed/x_valid.pkl
+  - data/processed/y_valid.pkl
+test_set_path:
+  - data/processed/x_test.pkl
+  - data/processed/y_test.pkl
+train_feng_set_path:
+  - data/processed/x_train_feng.pkl
+  - data/processed/y_train_feng.pkl
+valid_feng_set_path:
+  - data/processed/x_valid_feng.pkl
+  - data/processed/y_valid_feng.pkl
+test_feng_set_path:
+  - data/processed/x_test_feng.pkl
+  - data/processed/y_test_feng.pkl
+raw_dataset_path: data/processed/raw_dataset.pkl
+cleaned_raw_dataset_path: data/processed/raw_dataset.pkl
+production_model_path: models/production_model.pkl
+
+scaler_path: models/scaler.pkl
+le_path: models/label_encoder.pkl
+
+best_rf_param_log_path: log/best_rf_param.json
+best_xgb_param_log_path: log/best_xgb_param.json
+
+best_rf_estimator_log_path: log/best_rf_estimator.json
+best_xgb_estimator_log_path: log/best_xgb_estimator.json
+
+# Debug related
+print_debug: true
+
+# Columns by data type related
+
+object_columns:
+  - ocean_proximity
+
+float64_columns:
+  - longitude
+  - latitude
+  - housing_median_age
+  - total_rooms
+  - total_bedrooms
+  - population
+  - households
+  - median_income
+  - median_house_value
+
+# Predictors and label related
+label: median_house_value
+predictors:
+  - longitude
+  - latitude
+  - housing_median_age
+  - total_rooms
+  - total_bedrooms
+  - population
+  - households
+  - median_income
+  - rooms_per_household
+  - bedroms_per_rooms
+  - population_per_household
+  - ocean_proximity
+
+predictors_numerical:
+  - longitude
+  - latitude
+  - housing_median_age
+  - total_rooms
+  - total_bedrooms
+  - population
+  - households
+  - median_income
+  - rooms_per_household
+  - bedroms_per_rooms
+  - population_per_household
