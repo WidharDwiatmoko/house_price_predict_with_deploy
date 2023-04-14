@@ -1,9 +1,10 @@
 
 # California Houses Prices Prediction
 
-(TBA)
 
+(TBU)
 
+Link ML Deployment : https://house-price-predict.herokuapp.com/
 ## Dataset
 
 [Calicornia House Price](https://www.kaggle.com/datasets/shibumohapatra/house-price)
@@ -30,6 +31,45 @@
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `median_house_value` | `float` | **Required**. Median of the household prices of all the houses in the block |
+
+
+## Running API Call
+
+`POST API Call`
+
+- URL
+
+```url
+https://house-price-predict.herokuapp.com
+```
+- Parameter
+
+```url
+/predict_api
+```
+- Payload
+
+```json
+  {
+    "data":
+    {
+        "long": -122.23,	
+        "lat": 37.88,
+        "med_age": 41.0,
+        "total_rooms": 880.0,
+        "total_bedrooms": 129.0,
+        "pop":	322.0,
+        "hold":	126.0,
+        "income": 8.3252,
+        "ocean":"NEAR BAY"
+    }
+}
+```
+
+`Response API Call`
+- success, **200 OK** 
+
+![200 success](https://github.com/WidharDwiatmoko/house_price_predict_with_deploy/blob/main/docs/image_apiCall.png?raw=true)
 
 
 ## Authors
