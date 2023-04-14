@@ -5,14 +5,17 @@ from flask import Flask, redirect, render_template, request
 import joblib
 import os
 # the function I craeted to process the data in utils.py
-from utils import preprocess_new
+import src.util as util
+from data_preprocessing import preprocess_new
 
 
 # Intialize the Flask APP
 app = Flask(__name__)
 
+params = util.load_config()
+
 # Loading the Model
-model = joblib.load('model_XGBoost.pkl')
+model = util.pickle_load(params["production_model_path"])
 
 # Route for Home page
 
@@ -54,7 +57,7 @@ def predict():
 
         # call the Model and predict
         y_pred_new = model.predict(X_processed)
-        y_pred_new = '{:.4f}'.format(y_pred_new[0
+        y_pred_new = '{:.4f}'.format(y_pred_new[0])
         return render_template('predict.html', pred_val=y_pred_new)
     else:
         return render_template('predict.html')
