@@ -26,17 +26,16 @@ def load_dataset(config_data: dict) -> pd.DataFrame:
     return x_train, x_test, y_train, y_test
 
 
-def dump_data(x_train, y_train, valid_set, test_set):
+def dump_data(x_train, y_train, X_test_feng, y_test):
     util.pickle_dump(x_train, "data/processed/x_train_feng.pkl")
     util.pickle_dump(y_train, "data/processed/y_train_feng.pkl")
 
-    util.pickle_dump(valid_set.drop(columns="y"),
-                     "data/processed/x_valid_feng.pkl")
-    util.pickle_dump(valid_set.y, "data/processed/y_valid_feng.pkl")
+    # util.pickle_dump(valid_set.drop(columns="y"),
+    #                  "data/processed/x_valid_feng.pkl")
+    # util.pickle_dump(valid_set.y, "data/processed/y_valid_feng.pkl")
 
-    util.pickle_dump(test_set.drop(columns="y"),
-                     "data/processed/x_test_feng.pkl")
-    util.pickle_dump(test_set.y, "data/processed/y_test_feng.pkl")
+    util.pickle_dump(X_test_feng, "data/processed/x_test_feng.pkl")
+    util.pickle_dump(y_test, "data/processed/y_test_feng.pkl")
 
 
 def preprocess_new(X_new):
@@ -115,7 +114,7 @@ if __name__ == "__main__":
     X_train_final = total_pipeline.fit_transform(x_train)
 
     # X_train_feng = total_pipeline.fit_transform(x_train)
-    # X_test_feng = total_pipeline.transform(x_test)
+    X_test_feng = total_pipeline.transform(x_test)
 
-    # # 13. Dump data
-    # dump_data(X_train_feng, y_train, X_test_feng, y_test)
+    # 13. Dump data
+    dump_data(X_train_final, y_train, X_test_feng, y_test)

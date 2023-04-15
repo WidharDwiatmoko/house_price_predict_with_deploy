@@ -5,7 +5,7 @@ import numpy as np
 import joblib
 import os
 import yaml
-import util as util
+import src.util as util
 
 
 def read_raw_data(config: dict) -> pd.DataFrame:
@@ -18,7 +18,7 @@ def read_raw_data(config: dict) -> pd.DataFrame:
     # Look and load add CSV files
     for i in tqdm(os.listdir(raw_dataset_dir)):
         raw_dataset = pd.concat(
-            [pd.read_csv(raw_dataset_dir + i, delimiter=';'), raw_dataset])
+            [pd.read_csv(raw_dataset_dir + i), raw_dataset])
 
     # Return raw dataset
     return raw_dataset
@@ -39,7 +39,7 @@ def splitInputOtput(data, config_data):
 
 def splitTrainTest(x, y):
     x_train, x_test, y_train, y_test = train_test_split(
-        x, y, test_size=0.3, random_state=42, stratify=y)
+        x, y, test_size=0.15, shuffle=True, random_state=42)
     return x_train, x_test, y_train, y_test
 
 
@@ -57,6 +57,8 @@ if __name__ == "__main__":
 
     # 2. Read raw dataset
     raw_dataset = read_raw_data(config_data)
+
+    # print(raw_dataset['housing_median_age'])
 
     # 3. Remove duplicates data
     raw_dataset = removeDuplicates(raw_dataset)
