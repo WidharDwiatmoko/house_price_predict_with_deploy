@@ -2,10 +2,11 @@ import yaml
 import joblib
 from datetime import datetime
 import sys
+sys.path.append("config")
 # sys.path.append(
 #     "/Users/widhardwiatmoko/Dropbox/My\ Mac\ \(Laptop\ Murahan\)/Downloads/Tugas\ Pacmann/ML\ Proc/")
 
-config_dir = "../config/config.yaml"
+# config_dir = "../config/config.yaml"
 # config_dir = "/Users/widhardwiatmoko/Dropbox/My\ Mac\ \(Laptop\ Murahan\)/Downloads/Tugas\ Pacmann/ML\ Proc/config/config.yaml"
 
 
@@ -15,7 +16,7 @@ def time_stamp() -> datetime:
     return datetime.now()
 
 
-def load_config() -> dict:
+def load_config(config_dir) -> dict:
     # Try to load yaml file
     try:
         with open(config_dir, "r") as file:
@@ -37,11 +38,11 @@ def pickle_dump(data, file_path: str) -> None:
     joblib.dump(data, file_path)
 
 
-params = load_config()
-PRINT_DEBUG = params["print_debug"]
+# params = load_config("../config/config.yaml")
+# PRINT_DEBUG = params["print_debug"]
 
 
-def print_debug(messages: str) -> None:
-    # Check wheter user wants to use print or not
-    if PRINT_DEBUG == True:
-        print(time_stamp(), messages)
+# def print_debug(messages: str) -> None:
+#     # Check wheter user wants to use print or not
+#     if PRINT_DEBUG == True:
+#         print(time_stamp(), messages)

@@ -23,7 +23,7 @@ import matplotlib.pyplot as plt
 
 import util as util
 
-params = util.load_config()
+params = util.load_config(config_dir="../config/config.yaml")
 
 
 def load_train_feng(params: dict) -> pd.DataFrame:

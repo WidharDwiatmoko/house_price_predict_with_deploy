@@ -6,13 +6,14 @@ import joblib
 import os
 # the function I craeted to process the data in utils.py
 import src.util as util
-from src.data_preprocessing import preprocess_new
+# from src.data_preprocessing import preprocess_new
+from src.helper import preprocess_new
 
 
 # Intialize the Flask APP
 app = Flask(__name__)
 
-params = util.load_config()
+params = util.load_config(config_dir="config/config.yaml")
 
 # Loading the Model
 model = util.pickle_load(params["production_model_path"])

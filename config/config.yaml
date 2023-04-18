@@ -3,24 +3,22 @@ raw_dataset_dir: ../data/raw/
 train_set_path:
   - ../data/processed/x_train.pkl
   - ../data/processed/y_train.pkl
-valid_set_path:
-  - ../data/processed/x_valid.pkl
-  - ../data/processed/y_valid.pkl
+  - data/processed/x_train.pkl
+  - data/processed/y_train.pkl
 test_set_path:
   - ../data/processed/x_test.pkl
   - ../data/processed/y_test.pkl
+  - data/processed/x_test.pkl
+  - data/processed/y_test.pkl
 train_feng_set_path:
   - ../data/processed/x_train_feng.pkl
   - ../data/processed/y_train_feng.pkl
-valid_feng_set_path:
-  - ../data/processed/x_valid_feng.pkl
-  - ../data/processed/y_valid_feng.pkl
 test_feng_set_path:
   - ../data/processed/x_test_feng.pkl
   - ../data/processed/y_test_feng.pkl
 raw_dataset_path: ../data/processed/raw_dataset.pkl
 cleaned_raw_dataset_path: ../data/processed/raw_dataset.pkl
-production_model_path: ../models/production_model.pkl
+production_model_path: models/production_model.pkl
 
 scaler_path: ../models/scaler.pkl
 le_path: ../models/label_encoder.pkl

@@ -53,7 +53,7 @@ def dumpData(x_train, y_train, x_test, y_test, config_data):
 
 if __name__ == "__main__":
     # 1. Load configuration file
-    config_data = util.load_config()
+    config_data = util.load_config(config_dir="../config/config.yaml")
 
     # 2. Read raw dataset
     raw_dataset = read_raw_data(config_data)
