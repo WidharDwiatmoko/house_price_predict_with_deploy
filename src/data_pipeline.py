@@ -5,7 +5,7 @@ import numpy as np
 import joblib
 import os
 import yaml
-import src.util as util
+import util as util
 
 
 def read_raw_data(config: dict) -> pd.DataFrame:

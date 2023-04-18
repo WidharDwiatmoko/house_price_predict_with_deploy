@@ -5,7 +5,7 @@ from flask import Flask, redirect, render_template, request, jsonify
 import joblib
 import os
 # the function I craeted to process the data in utils.py
-import src.util as util
+import util as util
 from data_preprocessing import preprocess_new
 
 

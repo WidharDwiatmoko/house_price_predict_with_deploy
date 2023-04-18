@@ -1,8 +1,12 @@
 import yaml
 import joblib
 from datetime import datetime
+import sys
+# sys.path.append(
+#     "/Users/widhardwiatmoko/Dropbox/My\ Mac\ \(Laptop\ Murahan\)/Downloads/Tugas\ Pacmann/ML\ Proc/")
 
-config_dir = r"config/config.yaml"
+config_dir = "../config/config.yaml"
+# config_dir = "/Users/widhardwiatmoko/Dropbox/My\ Mac\ \(Laptop\ Murahan\)/Downloads/Tugas\ Pacmann/ML\ Proc/config/config.yaml"
 
 
 def time_stamp() -> datetime:

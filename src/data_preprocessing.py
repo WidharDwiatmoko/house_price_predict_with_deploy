@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
-import src.util as util
+import util as util
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline, FeatureUnion
 from sklearn_features.transformers import DataFrameSelector
@@ -27,15 +27,15 @@ def load_dataset(config_data: dict) -> pd.DataFrame:
 
 
 def dump_data(x_train, y_train, X_test_feng, y_test):
-    util.pickle_dump(x_train, "data/processed/x_train_feng.pkl")
-    util.pickle_dump(y_train, "data/processed/y_train_feng.pkl")
+    util.pickle_dump(x_train, "../data/processed/x_train_feng.pkl")
+    util.pickle_dump(y_train, "../data/processed/y_train_feng.pkl")
 
     # util.pickle_dump(valid_set.drop(columns="y"),
     #                  "data/processed/x_valid_feng.pkl")
     # util.pickle_dump(valid_set.y, "data/processed/y_valid_feng.pkl")
 
-    util.pickle_dump(X_test_feng, "data/processed/x_test_feng.pkl")
-    util.pickle_dump(y_test, "data/processed/y_test_feng.pkl")
+    util.pickle_dump(X_test_feng, "../data/processed/x_test_feng.pkl")
+    util.pickle_dump(y_test, "../data/processed/y_test_feng.pkl")
 
 
 def preprocess_new(X_new):

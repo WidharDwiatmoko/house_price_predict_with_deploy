@@ -35,7 +35,7 @@ Link ML Deployment : https://house-price-predict.herokuapp.com/
 
 ## Running API Call
 
-`POST API Call`
+`POST API Call using Postman`
 
 - URL
 
@@ -71,9 +71,35 @@ https://house-price-predict.herokuapp.com
 
 ![200 success](https://github.com/WidharDwiatmoko/house_price_predict_with_deploy/blob/main/docs/image_apiCall.png?raw=true)
 
+`POST API Call using curl`
+
+if you have no Postman installed on your machine, you can use `curl` to use `predict_api`. All you have to do just open your terminal and type in
+
+```bash
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{
+    "data":
+    {
+        "long": -122.23,
+        "lat": 37.88,
+        "med_age": 41.0,
+        "total_rooms": 880.0,
+        "total_bedrooms": 129.0,
+        "pop":  322.0,
+        "hold": 126.0,
+        "income": 8.3252,
+        "ocean":"NEAR BAY"
+    }
+}' \
+ https://house-price-predict.herokuapp.com/predict_api
+```
+
+
+
 
 ## Authors
 
-- [@Widhar](https://www.github.com/octokatherine)
+- [@Widhar](https://github.com/WidharDwiatmoko)
 
 

@@ -21,7 +21,7 @@ import copy
 import hashlib
 import matplotlib.pyplot as plt
 
-import src.util as util
+import util as util
 
 params = util.load_config()
 
