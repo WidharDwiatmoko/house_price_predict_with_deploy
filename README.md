@@ -40,7 +40,7 @@ Link ML Deployment : https://house-price-predict.herokuapp.com/
 
 ## Diagram Flow Feature Engineering
 
-![Flow FE](https://github.com/WidharDwiatmoko/house_price_predict_with_deploy/blob/main/docs/Feature Eng.png?raw=true)
+![Flow FE](https://github.com/WidharDwiatmoko/house_price_predict_with_deploy/blob/main/docs/FeatureEng.png?raw=true)
 
 ## Diagram Flow Modeling and Deploying
 
