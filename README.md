@@ -1,10 +1,12 @@
 
 # California Houses Prices Prediction
 
+## Brief Background
 
-(TBU)
+As we all know, California is one of the most famous state in the US. California has a lot of landmarks to visit, such as The famous Hollywood, Golden Gate Bridge, Silicon Valley, and many more. Therefore, there is always people from different state or abroad moving to California for Job, Education, Vacation, etc. With such high traffic from people coming to California, the demand of house also increase. especially people from abroad who knows very little of California, will have difficulty finding the best option for house. So I tried to create machine learning model to help end user to pick the best house based on few attributes
 
 Link ML Deployment : https://house-price-predict.herokuapp.com/
+
 ## Dataset
 
 [Calicornia House Price](https://www.kaggle.com/datasets/shibumohapatra/house-price)
@@ -32,6 +34,17 @@ Link ML Deployment : https://house-price-predict.herokuapp.com/
 | :-------- | :------- | :------------------------- |
 | `median_house_value` | `float` | **Required**. Median of the household prices of all the houses in the block |
 
+## Diagram Flow Preprocessing and EDA 
+
+![Flow Prepro](https://github.com/WidharDwiatmoko/house_price_predict_with_deploy/blob/main/docs/Preprocess.png?raw=true)
+
+## Diagram Flow Feature Engineering
+
+![Flow FE](https://github.com/WidharDwiatmoko/house_price_predict_with_deploy/blob/main/docs/Feature Eng.png?raw=true)
+
+## Diagram Flow Modeling and Deploying
+
+![Flow model](https://github.com/WidharDwiatmoko/house_price_predict_with_deploy/blob/main/docs/modeling.png?raw=true)
 
 ## Running API Call
 
@@ -94,9 +107,6 @@ curl --header "Content-Type: application/json" \
 }' \
  https://house-price-predict.herokuapp.com/predict_api
 ```
-
-
-
 
 ## Authors
 
