@@ -108,8 +108,19 @@ curl --header "Content-Type: application/json" \
  https://house-price-predict.herokuapp.com/predict_api
 ```
 
+## Conclusion and Future Works
+1. From the RMSE Score, XGBoost perform well for this dataset. although as we can see from comparison graph between actual data and trained model. trained model cannot predict actual data correctly.
+2. For future works, train with the more recent dataset. To give more accurate prediction with recent situation, you have to use recent dataset with updated features.
+3. Maybe you can improve more with Ensemble machine learning model to lower RMSE Score
+
+## Reference
+1. Pacmann Course
+2. Predicting House Prices with Machine Learning : https://towardsdatascience.com/predicting-house-prices-with-machine-learning-62d5bcd0d68f
+3. House Price Prediction With Machine Learning in Python: https://medium.com/codex/house-price-prediction-with-machine-learning-in-python-cf9df744f7ff
+
+
 ## Authors
 
-- [@Widhar](https://github.com/WidharDwiatmoko)
+- [Widhar Dwiatmoko](https://github.com/WidharDwiatmoko)
 
 

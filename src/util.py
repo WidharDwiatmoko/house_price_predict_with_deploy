@@ -38,11 +38,11 @@ def pickle_dump(data, file_path: str) -> None:
     joblib.dump(data, file_path)
 
 
-# params = load_config("../config/config.yaml")
-# PRINT_DEBUG = params["print_debug"]
+params = load_config("../config/config.yaml")
+PRINT_DEBUG = params["print_debug"]
 
 
-# def print_debug(messages: str) -> None:
-#     # Check wheter user wants to use print or not
-#     if PRINT_DEBUG == True:
-#         print(time_stamp(), messages)
+def print_debug(messages: str) -> None:
+    # Check wheter user wants to use print or not
+    if PRINT_DEBUG == True:
+        print(time_stamp(), messages)
