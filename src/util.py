@@ -38,7 +38,8 @@ def pickle_dump(data, file_path: str) -> None:
     joblib.dump(data, file_path)
 
 
-params = load_config("../config/config.yaml")
+# params = load_config("../config/config.yaml")
+params = load_config("./config/config.yaml")
 PRINT_DEBUG = params["print_debug"]
 
 
