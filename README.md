@@ -1,40 +1,38 @@
-
 # California Houses Prices Prediction
 
 ## Brief Background
 
 As we all know, California is one of the most famous state in the US. California has a lot of landmarks to visit, such as The famous Hollywood, Golden Gate Bridge, Silicon Valley, and many more. Therefore, there is always people from different state or abroad moving to California for Job, Education, Vacation, etc. With such high traffic from people coming to California, the demand of house also increase. especially people from abroad who knows very little of California, will have difficulty finding the best option for house. So I tried to create machine learning model to help end user to pick the best house based on few attributes
 
-Link ML Deployment : https://house-price-predict.herokuapp.com/
+Link ML Deployment : https://huggingface.co/spaces/widhar/HousePricingPredictor
 
 ## Dataset
 
 [Calicornia House Price](https://www.kaggle.com/datasets/shibumohapatra/house-price)
 
-
 ## Dataset Reference
 
 #### Predictors
 
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `longitude` | `float` | **Required**. Longitude value for the block in California, USA  |
-| `latitude` | `float` | **Required**. Latitude value for the block in California, USA  |
-| `housing_median_age` | `int` | **Required**. Median age of the house in the block  |
-| `total_rooms` | `int` | **Required**. Count of the total number of rooms (excluding bedrooms) in all houses in the block  |
-| `total_bedrooms` | `int` | **Required**. Count of the total number of bedrooms in all houses in the block  |
-| `population` | `int` | **Required**. Count of the total number of population in the block  |
-| `households` | `int` | **Required**. Count of the total number of households in the block  |
-| `median_income` | `float` | **Required**. Median of the total household income of all the houses in the block  |
-| `ocean_proximity` | `categorical` | **Required**. Type of the landscape of the block `[ 'NEAR BAY', '<1H OCEAN', 'INLAND', 'NEAR OCEAN', 'ISLAND' ]` |
+| Parameter            | Type          | Description                                                                                                      |
+| :------------------- | :------------ | :--------------------------------------------------------------------------------------------------------------- |
+| `longitude`          | `float`       | **Required**. Longitude value for the block in California, USA                                                   |
+| `latitude`           | `float`       | **Required**. Latitude value for the block in California, USA                                                    |
+| `housing_median_age` | `int`         | **Required**. Median age of the house in the block                                                               |
+| `total_rooms`        | `int`         | **Required**. Count of the total number of rooms (excluding bedrooms) in all houses in the block                 |
+| `total_bedrooms`     | `int`         | **Required**. Count of the total number of bedrooms in all houses in the block                                   |
+| `population`         | `int`         | **Required**. Count of the total number of population in the block                                               |
+| `households`         | `int`         | **Required**. Count of the total number of households in the block                                               |
+| `median_income`      | `float`       | **Required**. Median of the total household income of all the houses in the block                                |
+| `ocean_proximity`    | `categorical` | **Required**. Type of the landscape of the block `[ 'NEAR BAY', '<1H OCEAN', 'INLAND', 'NEAR OCEAN', 'ISLAND' ]` |
 
 #### target
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
+
+| Parameter            | Type    | Description                                                                 |
+| :------------------- | :------ | :-------------------------------------------------------------------------- |
 | `median_house_value` | `float` | **Required**. Median of the household prices of all the houses in the block |
 
-## Diagram Flow Preprocessing and EDA 
+## Diagram Flow Preprocessing and EDA
 
 ![Flow Prepro](https://github.com/WidharDwiatmoko/house_price_predict_with_deploy/blob/main/docs/Preprocess.png?raw=true)
 
@@ -55,32 +53,34 @@ Link ML Deployment : https://house-price-predict.herokuapp.com/
 ```url
 https://house-price-predict.herokuapp.com
 ```
+
 - Parameter
 
 ```url
 /predict_api
 ```
+
 - Payload
 
 ```json
-  {
-    "data":
-    {
-        "long": -122.23,	
-        "lat": 37.88,
-        "med_age": 41.0,
-        "total_rooms": 880.0,
-        "total_bedrooms": 129.0,
-        "pop":	322.0,
-        "hold":	126.0,
-        "income": 8.3252,
-        "ocean":"NEAR BAY"
-    }
+{
+  "data": {
+    "long": -122.23,
+    "lat": 37.88,
+    "med_age": 41.0,
+    "total_rooms": 880.0,
+    "total_bedrooms": 129.0,
+    "pop": 322.0,
+    "hold": 126.0,
+    "income": 8.3252,
+    "ocean": "NEAR BAY"
+  }
 }
 ```
 
 `Response API Call`
-- success, **200 OK** 
+
+- success, **200 OK**
 
 ![200 success](https://github.com/WidharDwiatmoko/house_price_predict_with_deploy/blob/main/docs/image_apiCall.png?raw=true)
 
@@ -109,18 +109,17 @@ curl --header "Content-Type: application/json" \
 ```
 
 ## Conclusion and Future Works
+
 1. From the RMSE Score, XGBoost perform well for this dataset. although as we can see from comparison graph between actual data and trained model. trained model cannot predict actual data correctly.
 2. For future works, train with the more recent dataset. To give more accurate prediction with recent situation, you have to use recent dataset with updated features.
 3. Maybe you can improve more with Ensemble machine learning model to lower RMSE Score
 
 ## Reference
+
 1. Pacmann Course
 2. Predicting House Prices with Machine Learning : https://towardsdatascience.com/predicting-house-prices-with-machine-learning-62d5bcd0d68f
 3. House Price Prediction With Machine Learning in Python: https://medium.com/codex/house-price-prediction-with-machine-learning-in-python-cf9df744f7ff
 
-
 ## Authors
 
 - [Widhar Dwiatmoko](https://github.com/WidharDwiatmoko)
-
-
